@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="mola_colega">Mola colega!!</string>
+    <string name="phone_number_hint">Numéro de téléphone</string>
+    <string name="call_button">Appeler</string>
+    <string name="send_button">Envoyer Message</string>
+    <string name="populate_button">Remplir</string>
+    <string name="list_empty">C'est vide... :(</string>
+    <string name="hello_name">Bonjour %1$s</string>
+</resources>

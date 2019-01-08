@@ -18,10 +18,11 @@ public class MyAdapter extends BaseAdapter {
 
     private Context mContext;
     private LayoutInflater mLayoutInflater;
+    private int count =0;
 
     @Override
     public int getCount() {
-        return 50;
+        return count;
     }
 
     @Override
@@ -55,6 +56,9 @@ public class MyAdapter extends BaseAdapter {
 
     private class ViewHolder{
         TextView textView;
-
     }
+    public void setCount(int count) {
+        this.count = count;
+    }
+
 }

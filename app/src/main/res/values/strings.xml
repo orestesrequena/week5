@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">CDNT4</string>
     <string name="mola_colega">Mola colega!!</string>
+    <string name="phone_number_hint">Phone number</string>
+    <string name="call_button">Call</string>
+    <string name="send_button">Send Message</string>
+    <string name="populate_button">Populate</string>
+    <string name="list_empty">The list it\'s empty... :(</string>
+    <string name="hello_name">Hello %1$s</string>
 </resources>

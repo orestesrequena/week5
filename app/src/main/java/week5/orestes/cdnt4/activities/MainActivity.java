@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 //este es para enviar mensaje, pero necesita permisos especiales
                 Intent intentSms = new Intent(Intent.ACTION_SENDTO);
-                String message = "patata";
+                String message = "patata 22";
                 intentSms.putExtra("sms_body", message);
                 intentSms.setData(Uri.parse("smsto:" + phoneNumber));
 
@@ -107,6 +107,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mCall.callOnClick();
         } else if (requestCode == REQUEST_PERMISSIONS && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             mSms.setEnabled(true);
+
+
         }
     }
 }
