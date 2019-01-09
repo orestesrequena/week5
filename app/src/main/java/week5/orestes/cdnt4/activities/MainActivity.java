@@ -2,7 +2,6 @@ package week5.orestes.cdnt4.activities;
 
 import android.Manifest;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,7 +14,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.orhanobut.hawk.Hawk;
+
 import week5.orestes.cdnt4.R;
+import week5.orestes.cdnt4.common.Constants;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,8 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSms.setOnClickListener(this);
 
         //para guardar la variable de myEditText en la memoria
-        SharedPreferences sp = getSharedPreferences("PREFS", MODE_PRIVATE);
-        myEditText.setText(sp.getString("firstName", "---"));
+//        SharedPreferences sp = getSharedPreferences("PREFS", MODE_PRIVATE); vieja manera de hacer
+
+        myEditText.setText(Hawk.get(Constants.FIRST_NAME, ""));
     }
 
 
@@ -57,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             } else {
                 Toast.makeText(getApplicationContext(), content, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                intent.putExtra("firstName", content);
+                intent.putExtra(Constants.FIRST_NAME, content);
                 startActivity(intent);
             }
         } else if (v.getId() == mCall.getId()) {

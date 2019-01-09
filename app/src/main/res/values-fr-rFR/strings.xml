@@ -5,6 +5,6 @@
     <string name="call_button">Appeler</string>
     <string name="send_button">Envoyer Message</string>
     <string name="populate_button">Remplir</string>
-    <string name="list_empty">C'est vide... :(</string>
-    <string name="hello_name">Bonjour %1$s</string>
+    <string name="list_empty">C est vide... :(</string>
+    <string name="hello_name">Bonjour %1$s \u265</string>
 </resources>

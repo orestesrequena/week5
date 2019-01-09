@@ -3,7 +3,6 @@ package week5.orestes.cdnt4.activities;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -13,8 +12,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orhanobut.hawk.Hawk;
+
 import week5.orestes.cdnt4.R;
 import week5.orestes.cdnt4.adapters.MyAdapter;
+import week5.orestes.cdnt4.common.Constants;
 
 public class SecondActivity extends Activity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener, View.OnClickListener {
     MyAdapter myAdapter;
@@ -29,14 +31,16 @@ public class SecondActivity extends Activity implements AdapterView.OnItemClickL
         Button populate = findViewById(R.id.second_populate);
 
         Intent intent = getIntent();
-        String fromMainActivity = intent.getStringExtra("firstName");
+        String fromMainActivity = intent.getStringExtra(Constants.FIRST_NAME);
         myTextView.setText(getString(R.string.hello_name, fromMainActivity));
 
         // we write fromMainActivity on Memory
-        SharedPreferences sp = getSharedPreferences("PREFS", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString("firstName", fromMainActivity);
-        editor.apply();
+        //SharedPreferences sp = getSharedPreferences("PREFS", MODE_PRIVATE); old way to do it
+        Hawk.put(Constants.FIRST_NAME, fromMainActivity);
+        // con el hwak no necesitamos el sharedPreferences, lo que haciamos en 4 lineas lo hacemos en 1
+//        SharedPreferences.Editor editor = sp.edit();
+//        editor.putString("firstName", fromMainActivity);
+//        editor.apply();
 
         //llama a la clase adapter y carga la lista de cosas
 
